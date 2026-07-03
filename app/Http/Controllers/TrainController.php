@@ -11,6 +11,8 @@ class TrainController extends Controller
 
         $trains = Train::all();
 
-        return view('trains', compact('trains'));
+        $departing_trains = Train::where('orario_partenza', '>', now())->get();
+
+        return view('trains', compact('trains', 'departing_trains'));
     }
 }
