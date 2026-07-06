@@ -3,11 +3,7 @@
 use App\Http\Controllers\TrainController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function() {
-
-        return view('index');
-    }
-)->name('index');
+Route::get('/', [TrainController::class, 'indexTrains'] )->name('index');
 
 
-Route::get('/trains', [TrainController::class, 'getTrains']);
+Route::get('/departures', [TrainController::class, 'departuresTrains'])->name('departures');
