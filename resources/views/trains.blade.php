@@ -1,17 +1,7 @@
-<h1>Stazione di Lecco</h1>
-{{ now()->format('d/m/Y') }}
-<hr>
-
-
-{{-- @foreach ( $trains as $train )
-    
-    {{ $train['stazione_partenza'] }}<br>
-
-@endforeach --}}
-
+<h1>Stazione di Lecco {{ now()->format('d/m/Y') }}</h1>
+<a href="{{ route('index') }}">Torna alla home</a>
 <hr>
 
 <h2>Treni in partenza</h2>
-
 
 <x-train-timetable :departingTrains="$departingTrains"/>
